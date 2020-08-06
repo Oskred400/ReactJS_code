@@ -28,7 +28,7 @@ export default class bootstrap_login extends PureComponent {
         return (
             
 
-
+            <div className = "container-fluid">
     
             <Form className = "login_form">
 
@@ -65,6 +65,7 @@ export default class bootstrap_login extends PureComponent {
                 
                 
             </Form>
+            </div>
             
         )
     }

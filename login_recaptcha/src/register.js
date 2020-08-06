@@ -8,6 +8,7 @@ export default class register extends PureComponent {
     render() {
         return(
                 
+            <div className = "container-fluid">
     
             <Form className = "register_form">
 
@@ -42,11 +43,13 @@ export default class register extends PureComponent {
                     <FacebookLoginButton/>
                     <div className = "text-center"> Login with google </div>
                     <GoogleLoginButton/>
+                    <div className = "text-center"> Login with twitter </div>
+                    <TwitterLoginButton/>
                     <a href = "/sign-up" className = "text-center" align = "center" >Sign-up</a>
 
                     </Form>
                 
-            
+                    </div>
         );
     }
 }

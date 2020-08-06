@@ -13,66 +13,47 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { TekandCo } from './TekandCo.png';
 import Navbar from 'react-bootstrap/Navbar';
 
-import Login_form from './bootstrap_login'; 
-import './login_form.css';
+//unused: import Login_form from './bootstrap_login'; 
+//import './login_form.css';
 //define all functions
 //available for multiple imports
 //import Login_form from './newlogin';
-import Sid from './newlogin';
-import { NavbarBrand } from 'react-bootstrap';
+//import Sid from './newlogin';
+//import { NavbarBrand } from 'react-bootstrap';
 
-import Register from './register';
+//import Register from './register_final';
 //import './navibar.css' <img src={require('/images/image-name.png')} />;
 
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+//import Errorcode from './pages/404page';
 
-import Errorcode from './pages/404page';
-
-import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
+//import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
+//import MainPage from './MainPage';
 import MainPage from './MainPage';
 
+import Reqdlogin from './newlogin_bootstrap';
+
+import Reqdreg from './register_final';
 
 function App() {
   return (
 
 
     <div>
-      
-    <Navbar className = "navbar navbar-dark bg-dark">
-      <NavbarBrand>
+      <Router>
+        <div>
+
+          
         
-        <img src = {require('./TekandCo.png')} style = {{width:100,  marginTop: -11}} />
-        </NavbarBrand>
-      <Navbar.Toggle />
-      <Navbar.Collapse className="justify-content-end">
-      <Navbar.Text align = "text-right">
-            Hello World
-      </Navbar.Text>
-      </Navbar.Collapse>
+          <Route exact path = "/" component = {MainPage}/>
+          <Route path = "/register" component = {Reqdreg}/>
+          <Route path = "/login" component = {Reqdlogin}/>
+        
 
+        </div>
+      </Router>
+  
 
-         </Navbar>
-
-         <Router>
-                    <Switch>
-
-                      <Route exact path = "/" component = { MainPage } />
-                        <Route exact path = "/Login" component = { Login_form } />
-                        
-
-                    <Route exact path = "/Signup" component = { Register }/>
-                     <Route exact path = "/404" component = { Errorcode } />
-                     <Redirect to = "/404" />
-                    </Switch>
-
-
-                    <li><Link to = "/Login">Login Page</Link></li>
-            <li><Link to = "/Signup">Sign Up Page</Link></li>
-            
-            
-                </Router>
- 
-     
-    
      </div> 
     
 
